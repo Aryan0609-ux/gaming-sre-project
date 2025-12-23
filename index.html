@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>GTA Gaming Hub</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA VI Informational Blog</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#release">Release Info</a>
+        <a href="#features">Features</a>
+        <a href="#gameplay">Gameplay</a>
+        <a href="#extras">Additional Info</a>
+    </nav>
 
-  <nav>
-    <h2>GTA HUB</h2>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="blog.html">GTA 6 Blog</a></li>
-    </ul>
-  </nav>
+    <!-- Home Section -->
+    <header id="home">
+        <div class="cover-text">
+            <h1>Grand Theft Auto VI</h1>
+            <p>The ultimate next-gen open-world experience is coming soon. Explore massive cities, dynamic environments, and rich storylines like never before.</p>
+        </div>
+    </header>
 
-  <div class="content">
-    <h1>Welcome to GTA Gaming Hub</h1>
+    <!-- Main Content -->
+    <main>
+        <!-- Release Info -->
+        <section id="release">
+            <h2>Release Information</h2>
+            <p>Grand Theft Auto VI is expected to release in late 2026. Rockstar Games has announced that the game will be available on next-gen consoles and PC, bringing state-of-the-art graphics and immersive gameplay. The exact release date is yet to be officially confirmed, but anticipation is high across the global gaming community.</p>
+            <p>The developers are focusing on delivering a seamless experience with advanced AI, realistic physics, and expansive urban and rural environments. Rockstar aims to combine narrative depth with open-world freedom, giving players countless ways to explore and interact with the game world.</p>
+        </section>
 
-    <p>
-      GTA Gaming Hub is a cyberpunk-inspired demo platform created
-      to simulate how large-scale gaming systems behave in
-      real-world cloud environments.
-    </p>
+        <!-- Features -->
+        <section id="features">
+            <h2>Game Features</h2>
+            <p>GTA VI promises a plethora of features that push the boundaries of modern gaming:</p>
+            <ul>
+                <li><strong>Expansive Open World:</strong> Multiple cities with dynamic weather, day-night cycles, and interactive environments.</li>
+                <li><strong>Multiple Protagonists:</strong> Players can switch between characters, each with their own storylines that intersect.</li>
+                <li><strong>Advanced AI:</strong> NPCs react realistically to the player’s actions, making the world feel alive.</li>
+                <li><strong>Online Multiplayer:</strong> Enhanced online mode with missions, events, and cooperative/competitive gameplay.</li>
+                <li><strong>Customization:</strong> Vehicles, weapons, and properties can be extensively customized.</li>
+                <li><strong>Next-Gen Graphics:</strong> High-quality textures, realistic lighting, and detailed environments optimized for consoles and PC.</li>
+            </ul>
+        </section>
 
-    <p>
-      This project is designed for learning DevOps and Site
-      Reliability Engineering concepts such as deployment
-      pipelines, availability monitoring, and performance
-      stability.
-    </p>
+        <!-- Gameplay -->
+        <section id="gameplay">
+            <h2>Gameplay Mechanics</h2>
+            <p>GTA VI introduces advanced gameplay mechanics that enhance player immersion:</p>
+            <ul>
+                <li><strong>Interactive World:</strong> Every environment element, from vehicles to buildings, can be interacted with in multiple ways.</li>
+                <li><strong>Story-driven Missions:</strong> Players experience branching narratives influenced by their choices, impacting the game world.</li>
+                <li><strong>Dynamic Combat:</strong> Realistic physics for gunplay, melee, and vehicle-based combat.</li>
+                <li><strong>Exploration and Side Activities:</strong> Mini-games, side missions, collectibles, and random world events enrich the gameplay experience.</li>
+                <li><strong>Immersive Economy:</strong> In-game economy reacts to player actions, including property management, investments, and black-market activities.</li>
+            </ul>
+        </section>
 
-    <button onclick="simulateTraffic()">Simulate Player Traffic</button>
+        <!-- Additional Info -->
+        <section id="extras">
+            <h2>Additional Information</h2>
+            <p>GTA VI is shaping up to be one of the most ambitious titles in the franchise. Rockstar Games has focused on:</p>
+            <ul>
+                <li>Enhancing narrative depth while preserving the freedom of an open-world sandbox.</li>
+                <li>Optimizing performance across platforms to ensure smooth gameplay at high frame rates.</li>
+                <li>Expanding multiplayer interactions with frequent updates, events, and user-generated content.</li>
+                <li>Creating realistic urban environments inspired by multiple international cities.</li>
+            </ul>
+            <p>Players are encouraged to stay updated with Rockstar's official channels for news, trailers, and early gameplay insights. With a combination of advanced technology and innovative storytelling, GTA VI promises to redefine the open-world gaming experience.</p>
+        </section>
+    </main>
 
-    <p id="traffic"></p>
-  </div>
+    <!-- Scroll to Top Button -->
+    <button id="scrollBtn" onclick="scrollToTop()">↑</button>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

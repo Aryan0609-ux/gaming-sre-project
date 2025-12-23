@@ -1,86 +1,161 @@
+/* Global Styles */
+html {
+    scroll-padding-top: 70px; /* fixes sticky nav overlap */
+}
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #0b0b0b, #000);
-  color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    scroll-behavior: smooth;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* NAVBAR */
+a {
+    color: #ff4c4c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #ff1a1a;
+    text-decoration: underline;
+}
+
+/* Navigation */
 nav {
-  background: #050505;
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #1f1f1f;
-}
-
-nav h2 {
-  color: #9b5cff;
-  text-shadow: 0 0 12px #9b5cff;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+    background-color: #111;
+    padding: 12px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 nav a {
-  color: #6ae3ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+    margin: 0 25px;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
-nav a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px #6ae3ff;
+/* Cover Section */
+#home {
+    position: relative;
+    background-image: url('images/gta bg.jpg'); /* your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    /* Page load animation */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: pageLoad 0.8s ease-out forwards;
 }
 
-/* CONTENT */
-.content {
-  padding: 60px;
-  max-width: 900px;
-  margin: auto;
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    z-index: 1;
 }
 
-.content h1 {
-  color: #9b5cff;
-  font-size: 36px;
-  text-shadow: 0 0 14px rgba(155, 92, 255, 0.6);
+.cover-text {
+    position: relative;
+    z-index: 2;
 }
 
-.content p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #d2d2d2;
+.cover-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    color: #ff4c4c;
+    margin-bottom: 15px;
 }
 
-/* BUTTON */
-button {
-  margin-top: 25px;
-  padding: 14px 30px;
-  font-size: 15px;
-  background: linear-gradient(135deg, #9b5cff, #6ae3ff);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  color: black;
-  box-shadow: 0 0 25px rgba(106, 227, 255, 0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
+.cover-text p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #f0f0f0;
 }
 
-button:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 35px rgba(155, 92, 255, 0.6);
+/* Main Sections */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* JS TEXT */
-#traffic,
-#more-content {
-  margin-top: 20px;
-  color: #6ae3ff;
-  font-size: 16px;
-  text-shadow: 0 0 8px rgba(106, 227, 255, 0.4);
+section {
+    margin-bottom: 60px;
+
+    /* Scroll animation initial state */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff4c4c;
+    display: inline-block;
+}
+
+ul {
+    padding-left: 25px;
+    margin-top: 15px;
+}
+
+ul li {
+    margin-bottom: 12px;
+}
+
+
+#scrollBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #ff4c4c;
+    color: #000;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: none;
+}
+
+#scrollBtn:hover {
+    background-color: #ff1a1a;
+}
+
+
+@keyframes pageLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

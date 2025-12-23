@@ -1,40 +1,31 @@
-let totalRequests = 0;
-let errorCount = 0;
-let latencyRecords = [];
+// Scroll-to-top button
+const scrollBtn = document.getElementById('scrollBtn');
 
-function simulateTraffic() {
-  const trafficText = document.getElementById("traffic");
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+};
 
-  // Simulate random users
-  const users = Math.floor(Math.random() * 5000) + 500;
-
-  // Simulate random latency and errors per user
-  for (let i = 0; i < users; i++) {
-    totalRequests++;
-    const latency = Math.random() * 2000; // 0-2000ms
-    latencyRecords.push(latency);
-
-    const success = Math.random() > 0.1; // 90% success
-    if (!success) errorCount++;
-  }
-
-  const avgLatency =
-    latencyRecords.reduce((a, b) => a + b, 0) / latencyRecords.length;
-  const availability = (((totalRequests - errorCount) / totalRequests) * 100).toFixed(2);
-
-  trafficText.innerText = `
-Simulated online players: ${users}
-Total Requests: ${totalRequests}
-Errors: ${errorCount}
-Average Latency: ${avgLatency.toFixed(0)} ms
-Availability: ${availability}%
-Monitoring system stability...
-  `;
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function loadMore() {
-  const more = document.getElementById("more-content");
-  more.innerText =
-    "Future online games like GTA 6 require real-time observability, " +
-    "automated scaling, and proactive incident response — core goals of SRE.";
-}
+
+const sections = document.querySelectorAll('section');
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+
+sections.forEach(section => {
+    observer.observe(section);
+});
